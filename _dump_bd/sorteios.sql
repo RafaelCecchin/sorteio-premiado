@@ -6224,7 +6224,7 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `apostas`
   ADD CONSTRAINT `fk_apostas` FOREIGN KEY (`id_sorteio`) REFERENCES `sorteios` (`id`),
-  ADD CONSTRAINT `fk_bilhete` FOREIGN KEY (`id_bilhete`) REFERENCES `bilhetes` (`id`),s
+  ADD CONSTRAINT `fk_bilhete` FOREIGN KEY (`id_bilhete`) REFERENCES `bilhetes` (`id`),
   ADD CONSTRAINT `fk_sorteio` FOREIGN KEY (`id_sorteio`) REFERENCES `sorteios` (`id`);
 
 --
