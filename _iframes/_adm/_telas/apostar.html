@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Apostar</title>
+            <link rel="stylesheet" href="./_css/adm.css"/>
+            <link rel="stylesheet" href="./_css/apostar.css"/>
+            <link rel="stylesheet" href="./_css/geral_font.css.php"/>
+            <link rel="stylesheet" href="./_css/bilhete_font.css.php"/>
+        </head>
+        <body>
+            <div id="carregando">
+                <img id="carregando-gif" src="./_img/loading.gif"/>
+            </div>
+            <section class="menu">
+                <div class="botao-voltar" onclick="voltar()"></div>
+                <div class="botao-sair" onclick="finalizaSessao()"></div>
+                <table id="menu-apostar">
+                    <tr id="apostar-line1">
+                        <td>
+                            <input id="seleciona-apostas" type="button" value="APOSTAS" onclick="aparecerEscolherBolas()"/>
+                        </td>
+                        <td>
+                            <input id="valor-apostas" type="number" placeholder="VALOR... R$" min="1"/>
+                        </td>
+                    </tr>
+                    <tr id="apostar-line2">
+                        <td colspan="2">
+                            <input id="numeros-apostas" type="text" placeholder="NÚMEROS..."/>
+                        </td>
+                    </tr>
+                    <tr id="apostar-line3">
+                        <td>
+                            <h2>RODADAS: </h2>
+                            <select id="rodadas-apostas">
+                                <option class="opcoes-rodadas-apostas" value="1" selected> 01 </option>
+                                <option class="opcoes-rodadas-apostas" value="2">  02 </option>
+                                <option class="opcoes-rodadas-apostas" value="3">  03 </option>
+                                <option class="opcoes-rodadas-apostas" value="4">  04 </option>
+                                <option class="opcoes-rodadas-apostas" value="5">  05 </option>
+                                <option class="opcoes-rodadas-apostas" value="6">  06 </option>
+                                <option class="opcoes-rodadas-apostas" value="7">  07 </option>
+                                <option class="opcoes-rodadas-apostas" value="8">  08 </option>
+                                <option class="opcoes-rodadas-apostas" value="9">  09 </option>
+                                <option class="opcoes-rodadas-apostas" value="10"> 10 </option>
+                            </select>
+                        </td>
+                        <td>
+                            <h2>RÁPIDAS: </h2>
+                            <select id="rapidas-apostas" onchange="gerarApostaAleatoria()">
+                                <option class="opcoes-apostas-rapidas" value="0" selected> 00 </option>
+                                <option class="opcoes-apostas-rapidas" value="1">  01 </option>
+                                <option class="opcoes-apostas-rapidas" value="2">  02 </option>
+                                <option class="opcoes-apostas-rapidas" value="3">  03 </option>
+                                <option class="opcoes-apostas-rapidas" value="4">  04 </option>
+                                <option class="opcoes-apostas-rapidas" value="5">  05 </option>
+                                <option class="opcoes-apostas-rapidas" value="6">  06 </option>
+                                <option class="opcoes-apostas-rapidas" value="7">  07 </option>
+                                <option class="opcoes-apostas-rapidas" value="8">  08 </option>
+                                <option class="opcoes-apostas-rapidas" value="9">  09 </option>
+                                <option class="opcoes-apostas-rapidas" value="10"> 10 </option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr id="apostar-line4">
+                        <td>
+                            <input id="cancelar-apostas" type="button" value="LIMPAR" onclick="recarregarPagina()"/>
+                        </td>
+                        <td>
+                            <input id="salvar-apostas" type="button" onclick="salvarAposta()" value="SALVAR"/>
+                        </td>
+                    </tr>
+                </table>
+                <table id="menu-bilhetes">
+                    <tr id="bilhetes-line1">
+                        <td colspan="2">
+                            <input type="number" id="numero-bilhete" placeholder="Número do bilhete..."/>
+                        </td>
+                    </tr>
+                    <tr  id="bilhetes-line2">
+                        <td>
+                            <input type="button" id="botao-reimprimir" onclick="reimprimirBilhete()" value="REIMPRIMIR"/>
+                        </td>
+                        <td>
+                            <input type="button" id="botao-repetir" onclick="repetirAposta()" value="REPETIR"/>
+                        </td>
+                    </tr>
+                    <tr id="bilhetes-line3"> 
+                        <td>
+                            <input type="button" id="botao-consultar" onclick="consultarPremio()" value="CONSULTAR"/>
+                        </td>
+                        <td>
+                            <input type="button" id="botao-cancelar" onclick="confirmarCancelamento()" value="CANCELAR"/>
+                        </td>
+                    </tr>
+                </table>
+                <div id="escolher-bolas">
+                    <div id="escolher-bolas-conteudo">
+                        <table>
+                            <tr>
+                                <td class="bolas-conteudo" onclick="selecionarBola(1)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>01</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(2)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>02</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(3)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>03</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(4)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>04</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(5)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>05</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(6)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>06</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(7)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>07</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(8)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>08</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(9)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>09</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(10)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>10</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bolas-conteudo" onclick="selecionarBola(11)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>11</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(12)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>12</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(13)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>13</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(14)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>14</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(15)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>15</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(16)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>16</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(17)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>17</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(18)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>18</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(19)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>19</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(20)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>20</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bolas-conteudo" onclick="selecionarBola(21)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>21</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(22)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>22</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(23)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>23</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(24)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>24</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(25)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>25</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(26)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>26</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(27)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>27</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(28)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>28</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(29)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>29</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(30)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>30</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bolas-conteudo" onclick="selecionarBola(31)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>31</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(32)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>32</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(33)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>33</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(34)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>34</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(35)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>35</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(36)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>36</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(37)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>37</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(38)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>38</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(39)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>39</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(40)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>40</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bolas-conteudo" onclick="selecionarBola(41)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>41</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(42)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>42</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(43)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>43</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(44)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>44</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(45)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>45</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(46)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>46</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(47)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>47</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(48)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>48</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(49)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>49</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(50)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>50</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bolas-conteudo" onclick="selecionarBola(51)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>51</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(52)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>52</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(53)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>53</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(54)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>54</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(55)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>55</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(56)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>56</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(57)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>57</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(58)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>58</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(59)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>59</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(60)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>60</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bolas-conteudo" onclick="selecionarBola(61)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>61</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(62)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>62</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(63)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>63</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(64)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>64</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(65)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>65</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(66)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>66</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(67)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>67</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(68)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>68</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(69)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>69</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(70)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>70</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bolas-conteudo" onclick="selecionarBola(71)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>71</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(72)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>72</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(73)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>73</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(74)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>74</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(75)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>75</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(76)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>76</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(77)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>77</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(78)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>78</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(79)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>79</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="bolas-conteudo" onclick="selecionarBola(80)">
+                                    <div class="esfera">
+                                        <div class="centro-esfera">
+                                            <h3>80</h3>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <div id="botoes-escolher-cancelar-bolas">
+                            <input id="botao-cancelar-bolas" type="button" value="CANCELAR" onclick="fecharEscolherBolas()"/>
+                            <input id="botao-escolher-bolas" type="button" value="ESCOLHER" onclick="escolherBolas()"/>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="confirmar">
+                    <div id="confirmar-conteudo">
+                        <div id="fechar-confirmar" onclick="fecharConfirmar()"></div>
+                        <div id="mensagem-confirmar">
+                            <h4>
+                                
+                            </h4>
+                            <h5>
+                            
+                            </h5>
+                        </div>
+                        <div id="botoes-confirmar">
+                            <input id="botao-confirmar-nao" onclick="fecharConfirmar()" type="button" value="NÃO"/>
+                            <input id="botao-confirmar-sim" onclick="confirmar()" type="button" value="SIM"/>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="retorno">
+                    <div id="retorno-conteudo">
+                        <div id="fechar-retorno" onclick="fecharRetorno()"></div>
+                        <div id="mensagem-retorno">
+                            <h4>
+                                
+                            </h4>
+                            <h5>
+
+                            </h5>
+                        </div>
+                        <div id="botoes-retorno">
+                            <input id="botao-retorno-ok" onclick="fecharRetorno()" type="button" value="OK"/>
+                            <input id="botao-retorno-imprimir" onclick="imprimirRetorno()" type="button" value="🖨️"/>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <script src="./_js/ajax.js"></script>
+            <script src="./_js/adm.js"></script>
+            <script src="./_js/apostar.js"></script>
+        </body>
+    </html>

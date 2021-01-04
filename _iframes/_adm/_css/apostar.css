@@ -1,0 +1,403 @@
+@charset "utf-8";
+
+#menu-apostar {
+    min-width: 300px;
+    width: 40%;
+    border: 1px solid black;
+    position: relative;
+    margin: auto;
+    border-radius: 10px;
+    margin-top: 7vh;
+}
+
+    tr {
+        border: 1px solid black;
+    }
+
+        td {
+            text-align: center;
+        }
+
+            #apostar-line1 td {
+                width: 50%;
+            }
+
+                #seleciona-apostas {
+                    width: 90%;
+                    height: 7vh;
+                    margin: 1vh;
+                    font-weight: bolder;
+                    font-size: 3vh;
+                    border-radius: 5px;
+                    background-color: white;
+                } 
+
+                #valor-apostas {
+                    width: 80%;
+                    height: 7vh;
+                    margin: 1vh;
+                    font-weight: 300;
+                    font-size: 3vh;
+                    border-radius: 5px;
+                    padding-left: 10%;
+                    border: none;
+                }
+
+            /*#apostar-line2 td {
+
+            }*/
+
+                #numeros-apostas {
+                    width: 95%;
+                    height: 7vh;
+                    margin: 1vh;
+                    font-weight: 300;
+                    font-size: 3vh;
+                    border-radius: 5px;
+                    border: none;
+                    text-align: center;
+                }
+
+            #apostar-line3 td {
+                width: 50%;
+            }
+
+                #rodadas-apostas, #rapidas-apostas {
+                    width: 50%;
+                    height: 5vh;
+                    margin: 1vh;
+                    font-weight: bolder;
+                    font-size: 3vh;
+                    border-radius: 5px;
+                    background-color: white;
+                    text-align: center;
+                    text-align-last: center;
+                } 
+
+                    h2 {
+                        font-family: 'Poppins';
+                        font-size: 3vh;
+                    }
+
+            #apostar-line4 td {
+                width: 50%;
+            }
+
+                #cancelar-apostas, #salvar-apostas {
+                    width: 90%;
+                    height: 7vh;
+                    margin: 1vh;
+                    font-weight: bolder;
+                    font-size: 3vh;
+                    border-radius: 5px;
+                    background-color: white;
+                }
+
+#menu-bilhetes {
+    border: 1px solid black;
+    min-width: 300px;
+    width: 40%;
+    position: relative;
+    margin: auto;
+    border-radius: 10px;
+    margin-top: 4vh;
+    flex-direction: column;
+}
+
+    #bilhetes-line1 td {
+        width: 100%;
+    }
+        
+        #numero-bilhete {
+            width: 95%;
+            height: 7vh;
+            margin: 1vh auto 1vh auto;
+            font-weight: 300;
+            font-size: 3vh;
+            border-radius: 5px;
+            border: none;
+            text-align: center;
+        }
+
+    #bilhetes-line2 td, #bilhetes-line3 td {
+        width: 50%;
+    }
+        
+        #botao-repetir, #botao-consultar, #botao-reimprimir, #botao-cancelar {
+            width: 90%;
+            height: 7vh;
+            margin: 0px auto 1vh auto;
+            font-weight: bolder;
+            font-size: 2.7vh;
+            border-radius: 5px;
+            background-color: white;
+        }
+            
+#escolher-bolas {
+    position: absolute;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    margin-top: 3.2vh;
+}         
+
+    #escolher-bolas-conteudo {
+        background-color: rgba(0,0,0,0.8);
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        margin: auto;
+        border-radius: 20px;
+    }
+
+        #escolher-bolas table {
+            margin: auto;
+        }
+
+            /*#escolher-bolas tr {
+
+            }*/
+
+                .bolas-conteudo {
+                    border-radius: 5%;
+                    cursor: pointer;
+                    padding: 2px;
+                }
+
+                .bolas-conteudo:hover {
+                    background-color: rgba(228, 228, 228,0.6);
+                }
+
+                .bolas-conteudo:active {
+                    background-color: rgba(228, 228, 228, 0.8);
+                }
+
+                    #escolher-bolas .esfera {
+                        opacity: 1;
+                        width: 7vh;
+                        height: 7vh;
+                        background-color: rgb(90, 187, 0);
+                        transition-property: opacity;
+                        transition-duration: 1s;
+                        background: radial-gradient(at top left, rgb(59, 59, 59)30%, rgb(8, 8, 8));
+                        -ms-border-radius: 100%;
+                        -moz-border-radius: 100%;
+                        -webkit-border-radius: 100%;
+                        -o-border-radius: 100%;
+                        border-radius: 100%;
+                        margin: auto;
+                        display: flex;
+                    }
+                    
+                        #escolher-bolas .centro-esfera {
+                            width: 3.2vh;
+                            height: 3.2vh;
+                            background: radial-gradient(at top left, white 20%, rgb(112, 112, 112));
+                            margin: auto;
+                            -ms-border-radius: 100%;
+                            -moz-border-radius: 100%;
+                            -webkit-border-radius: 100%;
+                            -o-border-radius: 100%;
+                            border-radius: 100%;
+                            padding: 5px;
+                            display: flex;
+                        }
+
+                            #escolher-bolas h3 {
+                                margin: auto;
+                                font-family: Arial Black;
+                                font-size: 2vh;
+                            }
+        #botoes-escolher-cancelar-bolas {
+            width: 100%;
+            display: flex;
+        }
+
+            #botao-escolher-bolas, #botao-cancelar-bolas {
+                width: 45%;
+                height: 7vh;
+                margin: 2vh auto;
+                font-weight: bolder;
+                font-size: 3vh;
+                border-radius: 5px;
+                background-color: white;
+            }
+
+#confirmar, #retorno {
+    position: absolute;
+    width: 100%;
+    display: none;
+    height: 100vh;
+    left: 0px;
+    top: 0px;
+    background-color: rgba(0,0,0,0.75);
+}
+
+    #confirmar-conteudo, #retorno-conteudo {
+        width: 300px;
+        margin: 15vh auto auto auto;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+    }
+
+        #fechar-confirmar, #fechar-retorno {
+            height: 4vh;
+            width: 4vh;
+            background: url(../_img/close.png) no-repeat center center;
+            background-size: 100% 100%;
+            margin: 10px 10px 5px auto;
+            cursor: pointer;
+        }
+
+        #mensagem-confirmar, #mensagem-retorno {
+            width: 100%;
+            min-height: 7vh;
+            margin: 0px 0px 10px 0px;
+            display: flex;
+            flex-direction: column;
+        }
+
+            h4 {
+                margin: auto;
+                font-family: 'Poppins';
+                text-align: center;
+            }
+
+            b {
+                font-weight: bolder;
+            }
+
+            h5 {
+                margin: 5px auto;
+                padding: 20px 20px;
+                border-radius: 10px;
+                font-weight: 800;
+                width: 85%;
+                text-align: center;
+                font-family: Arial, Helvetica, sans-serif;
+                max-height: 300px;
+                max-width: 200px;
+                overflow: auto;
+            }
+
+            b {
+                font-size: 3vh;
+            }
+
+        #botoes-confirmar, #botoes-retorno {
+            display: flex;
+            width: 100%;
+        }
+
+            #botao-confirmar-sim, #botao-confirmar-nao, #botao-retorno-ok, #botao-retorno-imprimir {
+                width: 45%;
+                height: 7vh;
+                margin: 1vh;
+                font-weight: bolder;
+                font-size: 3vh;
+                border-radius: 5px;
+                margin: auto auto 10px auto;
+                cursor: pointer;
+            }
+
+            #botao-confirmar-sim, #botao-retorno-ok, #botao-retorno-imprimir {
+                background-color: rgb(0, 194, 0);
+            }
+
+            #botao-retorno-imprimir {
+                display: none;
+            }
+
+            #botao-confirmar-nao {
+                background-color: rgb(194, 0, 0);
+            }
+        
+
+    @media screen and (min-height: 100vw) {
+        #escolher-bolas {
+            position: absolute;
+            width: 100%;
+            display: none;
+            flex-direction: column;
+            margin-top: 4vh;
+        }   
+
+            #escolher-bolas .esfera {
+                opacity: 1;
+                width: 7vw;
+                height: 7vw;
+                background-color: rgb(90, 187, 0);
+                transition-property: opacity;
+                transition-duration: 1s;
+                background: radial-gradient(at top left, rgb(59, 59, 59)30%, rgb(8, 8, 8));
+                -ms-border-radius: 100%;
+                -moz-border-radius: 100%;
+                -webkit-border-radius: 100%;
+                -o-border-radius: 100%;
+                border-radius: 100%;
+                margin: auto;
+                display: flex;
+            }
+            
+                #escolher-bolas .centro-esfera {
+                    width: 2vw;
+                    height: 2vw;
+                    background: radial-gradient(at top left, white 20%, rgb(112, 112, 112));
+                    margin: auto;
+                    -ms-border-radius: 100%;
+                    -moz-border-radius: 100%;
+                    -webkit-border-radius: 100%;
+                    -o-border-radius: 100%;
+                    border-radius: 100%;
+                    padding: 5px;
+                    display: flex;
+                }
+
+                    #escolher-bolas h3 {
+                        margin: auto;
+                        font-family: Arial Black;
+                        font-size: 2vw;
+                    }
+
+            #botao-escolher-bolas, #botao-cancelar-bolas {
+                width: 45%;
+                height: 7vh;
+                margin: 2vh auto;
+                font-weight: bolder;
+                font-size: 3vh;
+                border-radius: 5px;
+                background-color: white;
+            }
+    }
+
+    @media print {
+        * {
+            visibility: hidden;
+            background-color: white;
+            margin: 0px;
+            padding: 0px;
+        }
+    
+        #mensagem-retorno {
+            background-color: white;
+            position: absolute !important;
+            margin: none !important;
+            left: 0px !important;
+            top:0px !important;
+            visibility: visible;
+            max-height: none;
+            height: auto;
+        }
+        
+        h5 {
+            max-height: none;
+            height: auto;
+            max-width: none;
+        }
+    
+        #mensagem-retorno * {
+            visibility: visible;
+        }
+    }

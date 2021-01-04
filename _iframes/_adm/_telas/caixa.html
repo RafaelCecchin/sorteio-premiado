@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Caixa</title>
+        <link rel="stylesheet" href="./_css/adm.css"/>
+        <link rel="stylesheet" href="./_css/caixa.css"/>
+        <link rel="stylesheet" href="./_css/geral_font.css.php"/>
+        <link rel="stylesheet" href="./_css/extrato_font.css.php"/>
+    </head>
+    <body>
+        <div id="carregando">
+            <img id="carregando-gif" src="./_img/loading.gif"/>
+        </div>
+        <section class="menu">
+            <div class="botao-voltar" onclick="voltar()"></div>
+            <div class="botao-sair" onclick="finalizaSessao()"></div>
+
+            <div id="abas">
+                <div class="aba" id="aba-extrato" onclick="telaExtrato()">EXTRATO</div>
+                <div class="aba" id="aba-saldo" onclick="telaSaldo()">SALDO</div>
+            </div>
+            <table id="extrato">
+                <tbody>
+                    <tr id="pesquisas-line1">
+                        <td colspan="2">
+                            <div id="filtro-data">
+                                <input id="data-inicio" class="data" type="date" placeholder=""/>
+                                <input id="data-fim" class="data" type="date" placeholder=""/>
+                            </div>
+                        </td> 
+                    </tr>
+                    <tr id="pesquisas-line2">
+                        <td colspan="2">
+                            <select id="selecionar-caixa">
+                                <option class="caixa" value="0" selected> TODOS OS CAIXAS </option>
+                                <option class="caixa" value="1">  CAIXA PRINCIPAL </option>
+                                <option class="caixa" value="2">  CAIXA PRÊMIO </option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr id="pesquisas-line3">
+                        <td>
+                            <input class="tipo-pesquisa" name="tipo" id="tipo-analitico" type="radio" value="1" checked/><label for="tipo-analitico">ANALÍTICO</label>
+                        </td>
+                        <td>
+                            <input class="tipo-pesquisa" name="tipo" id="tipo-consolidado" type="radio" value="2"/><label for="tipo-consolidado">RESUMIDO</label>
+                        </td>
+                    </tr>
+                    <tr id="pesquisas-line4">
+                        <td colspan="2">
+                            <h2>OPERAÇÕES:</h2>
+                            <div id="selecionar-operacoes">
+                                <h3 onclick="entradasCheckbox()">--------- ENTRADAS ---------</h3>
+                                <input type="checkbox" class="operacoes" id="operacao-apostas" name="operacao-apostas" value="1" checked><label for="operacao-apostas"> APOSTAS</label><br/>
+                                <input type="checkbox" class="operacoes" id="operacao-cancelamento-pagamento" name="operacao-cancelamento-pagamento" value="2" checked><label for="operacao-cancelamento-pagamento"> CANC. PAG. DE PRÊMIO</label><br/>
+                                <input type="checkbox" class="operacoes" id="operacao-entrada-manual" name="operacao-entrada-manual" value="3" checked><label for="operacao-entrada-manual"> ENTRADA MANUAL</label><br/>
+                                <input type="checkbox" class="operacoes" id="operacao-entrada-automatica" name="operacao-entrada-automatica" value="4" checked><label for="operacao-entrada-automatica"> ENTRADA AUTOMATICA</label><br/>
+                                <input type="checkbox" class="operacoes" id="operacao-entrada-transferencia-manual" name="operacao-entrada-transferencia-manual" value="5" checked><label for="operacao-entrada-transferencia-manual"> ENTRAD. TRANSF. MAN.</label><br/>
+                                <input type="checkbox" class="operacoes" id="operacao-entrada-transferencia-automatica" name="operacao-entrada-transferencia-automatica" value="6" checked><label for="operacao-entrada-transferencia-automatica"> ENTRAD. TRANSF. AUT.</label><br/>
+                                                          
+                                <h3 onclick="saidasCheckbox()">---------- SAÍDAS ----------</h3>
+                                <input type="checkbox" class="operacoes" id="operacao-cancelamento-bilhete" name="operacao-cancelamento-bilhete" value="7" checked><label for="operacao-cancelamento-bilhete"> CANC. DE BILHETE</label><br/>
+                                <input type="checkbox" class="operacoes" id="operacao-pagamento-premio" name="operacao-pagamento-premio" value="8" checked><label for="operacao-pagamento-premio"> PAGAMENTO DE PRÊMIO</label><br/>
+                                <input type="checkbox" class="operacoes" id="operacao-sangria-manual" name="operacao-sangria-manual" value="9" checked><label for="operacao-sangria-manual"> SANGRIA MANUAL</label><br/>
+                                <input type="checkbox" class="operacoes" id="operacao-sangria-automatica" name="operacao-sangria-automatica" value="10" checked><label for="operacao-sangria-automatica"> SANGRIA AUTOMATICA</label><br/>
+                                <input type="checkbox" class="operacoes" id="operacao-saida-transferencia-manual" name="operacao-saida-transferencia-manual" value="11" checked><label for="operacao-saida-transferencia-manual"> SAÍDA TRANSF. MAN.</label><br/>
+                                <input type="checkbox" class="operacoes" id="operacao-saida-transferencia-automatica" name="operacao-saida-transferencia-automatica" value="12" checked><label for="operacao-saida-transferencia-automatica"> SAÍDA TRANSF. AUT.</label><br/>
+                                
+                            </div>
+                        </td>
+                    </tr>
+                    <tr id="pesquisas-line5">
+                        <td colspan="2">
+                            <input id="botao-pesquisar" type="button" value="PESQUISAR"  onclick="pesquisarExtrato()"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table id="saldo">
+                <tbody>
+                    <tr>
+                        <td colspan="3">
+                            <h2>CAIXA PRINCIPAL</h2>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <input type="text" class="saldo-principal" id="saldo-principal" disabled/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <input type="number" class="saldo-principal" id="caixa-1" placeholder="R$ 0,00" min="1"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value="➕" class="botao-caixa" onclick="confirmarMovimentarCaixa(1, 1)"/></td>
+                        <td><input type="button" value="➖" class="botao-caixa" onclick="confirmarMovimentarCaixa(2, 1)"/></td>
+                        <td><input type="button" value="💱" class="botao-caixa" onclick="confirmarMovimentarCaixa(3, 1)"/></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <h2>CAIXA PRÊMIO</h2>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <input type="text" class="saldo-premio" id="saldo-premio" disabled/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <input type="text" class="saldo-premio" id="saldo-premiacoes-pendentes" disabled/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <input type="number" class="saldo-premio" id="caixa-2" placeholder="R$ 0,00" min="1"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value="➕" class="botao-caixa" onclick="confirmarMovimentarCaixa(1, 2)"/></td>
+                        <td><input type="button" value="➖" class="botao-caixa" onclick="confirmarMovimentarCaixa(2, 2)"/></td>
+                        <td><input type="button" value="💱" class="botao-caixa" onclick="confirmarMovimentarCaixa(3, 2)"/></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div id="confirmar">
+                <div id="confirmar-conteudo">
+                    <div id="fechar-confirmar" onclick="fecharConfirmar()"></div>
+                    <div id="mensagem-confirmar">
+                        <h4>
+                            
+                        </h4>
+                        <h5>
+                           
+                        </h5>
+                    </div>
+                    <div id="botoes-confirmar">
+                        <input id="botao-confirmar-nao" onclick="fecharConfirmar()" type="button" value="NÃO"/>
+                        <input id="botao-confirmar-sim" onclick="confirmar()" type="button" value="SIM"/>
+                    </div>
+                </div>
+            </div>
+
+            <div id="retorno">
+                <div id="retorno-conteudo">
+                    <div id="fechar-retorno" onclick="fecharRetorno()"></div>
+                    <div id="mensagem-retorno">
+                        <h4>
+                            
+                        </h4>
+                        <h5>
+                            
+                        </h5>
+                    </div>
+                    <div id="botoes-retorno">
+                        <input id="botao-retorno-ok" onclick="fecharRetorno()" type="button" value="OK"/>
+                        <input id="botao-retorno-imprimir" onclick="imprimirRetorno()" type="button" value="🖨️"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="./_js/ajax.js"></script>
+        <script src="./_js/adm.js"></script>
+        <script src="./_js/caixa.js"></script>
+    </body>
+</html>

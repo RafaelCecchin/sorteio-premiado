@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Sorteios</title>
+        <link rel="stylesheet" href="./_css/adm.css"/>
+        <link rel="stylesheet" href="./_css/geral_font.css.php"/>
+        <link rel="stylesheet" href="./_css/sorteios.css"/>
+    </head>
+    <body>
+        <div id="carregando">
+            <img id="carregando-gif" src="./_img/loading.gif"/>
+        </div>
+        <section class="menu">
+            <div class="botao-voltar" onclick="voltar()"></div>
+            <div class="botao-sair" onclick="finalizaSessao()"></div>
+            <table id="menu-pesquisa">
+                <tbody>
+                    <tr id="pesquisas-line1">
+                        <td>
+                            <input id="pesquisa" type="number" placeholder="Número do sorteio..." min="0" max="99999999"/>
+                        </td>
+                    </tr>
+                    <tr id="pesquisas-line2">
+                        <td>
+                            <input id="botao-pesquisar" type="button" value="PESQUISAR"  onclick="pesquisarSorteios()"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="retorno">
+                
+            </div>
+            <div id="pagina">
+                <div id="voltar-pagina" onclick="voltarPagina()"></div>
+                <input type="number" id="num-pagina" value="1" min="1"/>
+                <div id="proxima-pagina" onclick="proximaPagina()"></div>
+            </div>
+            <div id="mensagem-pesquisa">
+                <div id="mensagem-pesquisa-conteudo">
+                    <div id="fechar-mensagem-pesquisa" onclick="fecharMensagemPesquisa()"></div>
+                    <div id="mensagem">
+                        <h4>
+                            
+                        </h4>
+                        <h5>
+                            
+                        </h5>
+                    </div>
+                    <div id="botoes-mensagem-pesquisa">
+                        <input id="botao-mensagem-ok" onclick="fecharMensagemPesquisa()" type="button" value="OK"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="./_js/ajax.js"></script>
+        <script src="./_js/adm.js"></script>
+        <script src="./_js/sorteios.js"></script>
+    </body>
+</html>

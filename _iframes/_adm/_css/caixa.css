@@ -1,0 +1,300 @@
+@charset "UTF-8";
+
+
+#abas {
+    position: relative;
+    display: flex;
+    margin: 5vh auto -6px auto;
+    z-index: 1;
+    min-width: 250px;
+}
+
+    .aba {
+        padding: 1vh 2vh;
+        border: 1px solid black;
+        border-radius: 6px;
+        font-family: 'Poppins';
+        font-size: 3vh;
+    }
+
+    #aba-extrato {
+        background-color: white;
+        transform: scale(1.1);
+    }
+
+    #saldo {
+        display: none;
+    }
+
+    
+#extrato, #saldo {
+    z-index: 3;
+    min-width: 300px;
+    width: 40%;
+    border: 1px solid black;
+    position: relative;
+    margin: auto;
+    border-radius: 10px;
+    background-color: #56baed;
+}
+
+    #extrato tr, #saldo tr {
+        border: 1px solid black;
+    }
+
+        #extrato td, #saldo td {
+            text-align: center;
+        }
+
+                #filtro-data {
+                    width: 100%;
+                    display: flex;
+                    border: 1vh 0px 1vh 0pxs;
+                    margin-top: 1vh;
+                }
+
+                    .data {
+                        width: 45%;
+                        font-size: 2vh;
+                        height: 7vh;
+                        margin: auto;
+                        font-weight: 300;
+                        border-radius: 5px;
+                        border: none;
+                        text-align: center;
+                    }
+
+                #selecionar-caixa {
+                    width: 95%;
+                    height: 7vh;
+                    margin: 0.5vh 1vh 1vh 1vh;
+                    font-weight: bolder;
+                    font-size: 3vh;
+                    border-radius: 5px;
+                    background-color: white;
+                    text-align: center;
+                    text-align-last: center;
+                    margin-top: 1vh;
+                }
+
+                .tipo-pesquisa {
+                    transform: scale(1.8);
+                    margin-top: 1.5vh;
+                }
+
+                label {
+                    font-family: Arial, Helvetica, sans-serif;
+                    padding-left: 1.3vh;
+                    font-size: 3.2vh;
+                }    
+
+                #selecionar-operacoes {
+                    margin: 1vh auto auto auto;
+                    width: 95%;
+                    display: block;
+                    text-align: left;
+                    max-height: 210px;
+                    overflow: auto;
+                    padding-left: 10px;
+                }
+
+                    h2 {
+                        font-family: 'Poppins';
+                        font-size: 3vh;
+                        text-align: center;
+                        margin-top: 1vh;
+                        margin-bottom: -0.5vh;
+                    }
+
+                    h3 {
+                        font-size: 3vh;
+                        font-weight: 500;
+                        text-align: center;
+                    }
+
+                    .operacoes {
+                        transform: scale(1.8);
+                        margin-top: 1vh;
+                    }
+
+                #botao-pesquisar {
+                    width: 40%;
+                    height: 7vh;
+                    margin: 0.5vh 1vh 1vh 1vh;
+                    font-weight: bolder;
+                    font-size: 3vh;
+                    border-radius: 5px;
+                    background-color: white;
+                    margin-top: 1vh;
+                }
+
+                .saldo-premio, .saldo-principal {
+                    width: 95%;
+                    height: 6vh;
+                    margin: 0.5vh 1vh 1vh 1vh;
+                    font-weight: bolder;
+                    font-size: 3vh;
+                    border-radius: 5px;
+                    background-color: white;
+                    text-align: center;
+                    text-align-last: center;
+                    margin-top: 1vh;
+                }
+
+                .botao-caixa {
+                    width: 92.5%;
+                    height: 7vh;
+                    margin: 1vh auto;
+                    font-weight: bolder;
+                    font-size: 3vh;
+                    border-radius: 10px;
+                    background-color: white;
+                }
+
+                #saldo-premio, #saldo-principal {
+                    color: green;
+                }
+
+                #saldo-premiacoes-pendentes {
+                    color: red;
+                }
+
+#confirmar, #retorno {
+    z-index: 4;
+    position: absolute;
+    width: 100%;
+    display: none;
+    height: 100vh;
+    left: 0px;
+    top: 0px;
+    background-color: rgba(0,0,0,0.75);
+}
+
+    #confirmar-conteudo, #retorno-conteudo {
+        width: 300px;
+        margin: 15vh auto auto auto;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+    }
+
+        #fechar-confirmar, #fechar-retorno {
+            height: 4vh;
+            width: 4vh;
+            background: url(../_img/close.png) no-repeat center center;
+            background-size: 100% 100%;
+            margin: 10px 10px 5px auto;
+            cursor: pointer;
+        }
+
+        #mensagem-confirmar, #mensagem-retorno {
+            width: 100%;
+            min-height: 7vh;
+            margin: 0px 0px 10px 0px;
+            display: flex;
+            flex-direction: column;
+        }
+
+            h4 {
+                margin: auto;
+                font-family: 'Poppins';
+                text-align: center;
+            }
+
+            h5 {
+                margin: 5px auto;
+                padding: 20px 20px;
+                border-radius: 10px;
+                font-weight: 800;
+                width: 85%;
+                text-align: center;
+                font-family: Arial, Helvetica, sans-serif;
+                max-width: 220px;
+                max-height: 300px;
+                overflow:auto;
+            }
+
+        #botoes-confirmar, #botoes-retorno {
+            display: flex;
+            width: 100%;
+        }
+
+            #botao-confirmar-sim, #botao-confirmar-nao, #botao-retorno-ok, #botao-retorno-imprimir {
+                width: 45%;
+                height: 7vh;
+                margin: 1vh;
+                font-weight: bolder;
+                font-size: 3vh;
+                border-radius: 5px;
+                margin: auto auto 10px auto;
+                cursor: pointer;
+            }
+
+            #botao-confirmar-sim, #botao-retorno-ok, #botao-retorno-imprimir {
+                background-color: rgb(0, 194, 0);
+            }
+
+            #botao-retorno-imprimir {
+                display: none;
+            }
+
+            #botao-confirmar-nao {
+                background-color: rgb(194, 0, 0);
+            }
+
+        #retorno-extrato {
+            width: 100%;
+            text-align: left;
+        }
+
+        .extrato-direita {
+            text-align: right;
+        }
+
+        .extrato-centro {
+            text-align: center;
+        }
+
+        .separador {
+            text-align: center;
+            font-size: 2.32vh;
+        }
+
+        @media print {
+            * {
+                visibility: hidden;
+                background-color: white;
+            }
+    
+            #mensagem-retorno {
+                background-color: white;
+                position: absolute !important;
+                margin: none !important;
+                left: 0px !important;
+                top:0px !important;
+                visibility: visible;
+                max-height: none;
+                height: auto;
+            }
+
+            h5 {
+                max-height: none;
+                height: auto;
+                max-width: none;
+            }
+
+            h4 {
+                max-height: none;
+                height: auto;
+            }
+
+            .separador {
+                text-align: center;
+                font-size: 17.3px;
+            }
+    
+            #mensagem-retorno * {
+                visibility: visible;
+            }
+        }

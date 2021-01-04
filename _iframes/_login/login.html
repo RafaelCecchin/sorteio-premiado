@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="_css/login.css">
+  </head>
+  <body>
+    <div class="wrapper fadeInDown">
+      <div id="formContent">
+        <!-- Tabs Titles -->
+        <h2 class="active"> Entrar </h2>
+    
+        <!-- Icon -->
+        <div class="fadeIn first">
+          <h5 id="login-alert"></h5>
+        </div>
+    
+        <!-- Login Form -->
+        <formm id="login-form">
+          <input type="email" id="login" class="fadeIn second" name="login" placeholder="login" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" maxlength="100">
+          <input type="password" id="password" class="fadeIn third" name="password" placeholder="senha" maxlength="20">
+          <input type="button" id="submit" class="fadeIn fourth" value="Entrar" id="button" onclick="verificarDados()">
+        </form>
+    
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+          <a class="underlineHover" href="#">Esqueceu a senha?</a>
+        </div>
+      </div>
+    </div>
+    <script src="_js/ajax.js"></script>
+    <script src="_js/login.js"></script>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+#carregando {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    z-index: 10;
+}
+
+    #carregando-gif {
+        margin: auto;
+        width: auto;
+        height: 15%;
+    }
+
+body {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #56baed;
+}
+
+    .menu {
+        width: 100%;
+        margin-top: 7vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+        #botoes {
+            margin: 10vh auto auto auto;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+            .botao {
+                width: 30%;
+                height: 7vh;
+                min-width: 225px;
+                min-height: 12vh;
+                padding: 10px 30px;
+                margin: 1vh auto;
+                font-weight: bolder;
+                font-size: 3vh;
+                border-radius: 10px;
+                background-color: white;
+            }
+
+        .botao-sair {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            width: 5.5vh;
+            height: 5.5vh;
+            background: url(../_img/logout.png) no-repeat center center;
+            background-size: 100% 100%;
+            cursor: pointer;
+        }
+
+        .botao-voltar {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            width: 5.5vh;
+            height: 5.5vh;
+            background: url(../_img/return.png) no-repeat center center;
+            background-size: 100% 100%;
+            cursor: pointer;
+        }
+
+        .botao-config {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            width: 5.5vh;
+            height: 5.5vh;
+            background: url(../_img/config.png) no-repeat center center;
+            background-size: 100% 100%;
+            cursor: pointer;
+        }
+
+
+        

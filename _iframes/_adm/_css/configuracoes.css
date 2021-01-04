@@ -1,0 +1,178 @@
+@charset "utf-8";
+
+
+#abas {
+    position: relative;
+    display: flex;
+    margin: 5vh auto -6px auto;
+    z-index: 1;
+    min-width: 250px;
+}
+
+    .aba {
+        padding: 1vh 2vh;
+        border: 1px solid black;
+        border-radius: 6px;
+        font-family: 'Poppins';
+        font-size: 3vh;
+    }
+
+    #aba-gerais {
+        background-color: white;
+        transform: scale(1.1);
+    }
+
+    #usuario {
+        display: none;
+    }
+
+    #saldo {
+        display: none;
+    }
+
+table {
+    min-width: 300px;
+    width: 40%;
+    border: 1px solid black;
+    position: relative;
+    margin: auto;
+    border-radius: 10px;
+    z-index: 3;
+    background-color: #56baed;
+}
+
+    tr {
+        border: 1px solid black;
+    }
+
+        td {
+            text-align: center;
+        }
+
+            #lucro, #razao {
+                width: 95%;
+                height: 7vh;
+                margin: 0vh 1vh 0vh 1vh;
+                font-weight: 300;
+                font-size: 3vh;
+                border-radius: 5px;
+                border: none;
+                text-align: center;
+            }
+
+            h2 {
+                font-family: 'Poppins';
+                font-size: 3vh;
+            }
+
+
+            input[type="text"], input[type="number"] {
+                width: 80%;
+                height: 7vh;
+                margin: 1vh;
+                font-weight: 300;
+                font-size: 3vh;
+                border-radius: 5px;
+                padding-left: 10%;
+                border: none;
+                text-align: center;
+            }
+
+            #dias-fechamento, #dias-faltando {
+                width: 80%;
+                height: 7vh;
+                margin: 1vh;
+                font-weight: 300;
+                font-size: 3vh;
+                border-radius: 5px;
+                padding-left: 10%;
+                border: none;
+                text-align: center;
+            }
+        
+            input[type="button"] {
+                width: 40%;
+                height: 7vh;
+                margin: 0.5vh 1vh 1vh 1vh;
+                font-weight: bolder;
+                font-size: 3vh;
+                border-radius: 5px;
+                background-color: white;
+            }
+
+        
+    
+#mensagem-configuracao {
+    z-index: 4;
+    position: absolute;
+    width: 100%;
+    display: none;
+    height: 100vh;
+    left: 0px;
+    top: 0px;
+    background-color: rgba(0,0,0,0.75);
+}
+
+    #mensagem-configuracao-conteudo {
+        width: 300px;
+        margin: 15vh auto auto auto;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+    }
+
+        #fechar-mensagem-configuracao {
+            height: 4vh;
+            width: 4vh;
+            background: url(../_img/close.png) no-repeat center center;
+            background-size: 100% 100%;
+            margin: 10px 10px 5px auto;
+            cursor: pointer;
+        }
+
+        #mensagem {
+            width: 100%;
+            min-height: 7vh;
+            margin: 0px 0px 10px 0px;
+            display: flex;
+            flex-direction: column;
+        }
+
+            h4 {
+                margin: auto;
+                font-family: 'Poppins';
+                text-align: center;
+            }
+
+            h5 {
+                background-color: blanchedalmond;
+                margin: 5px auto;
+                padding: 20px 20px;
+                border-radius: 10px;
+                font-weight: 800;
+                width: 85%;
+                text-align: center;
+                font-family: Arial, Helvetica, sans-serif;
+                word-wrap:  normal;
+            }
+
+        #botoes-mensagem-configuracao {
+            display: flex;
+            width: 100%;
+        }
+
+            #botao-mensagem-ok {
+                width: 45%;
+                height: 7vh;
+                margin: 1vh;
+                font-weight: bolder;
+                font-size: 3vh;
+                border-radius: 5px;
+                margin: auto auto 10px auto;
+                cursor: pointer;
+            }
+
+            #botao-mensagem-ok {
+                background-color: rgb(0, 194, 0);
+            }

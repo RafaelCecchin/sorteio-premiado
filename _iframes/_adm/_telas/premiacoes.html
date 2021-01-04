@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Premiacoes</title>
+        <link rel="stylesheet" href="./_css/adm.css"/>
+        <link rel="stylesheet" href="./_css/geral_font.css.php"/>
+        <link rel="stylesheet" href="./_css/premiacoes.css"/>
+    </head>
+    <body>
+        <div id="carregando">
+            <img id="carregando-gif" src="./_img/loading.gif"/>
+        </div>
+        <section class="menu">
+            <div class="botao-voltar" onclick="voltar()"></div>
+            <div class="botao-sair" onclick="finalizaSessao()"></div>
+            <table id="menu-pesquisa">
+                <tbody>
+                    <tr id="pesquisas-line1">
+                        <td colspan="3">
+                            <input id="pesquisa" type="number" placeholder="Número do bilhete..." min="1" max="99999999"/>
+                        </td>
+                    </tr>
+                    <tr id="pesquisas-line2">
+                        <td colspan="3">
+                            <div id="filtro-data">
+                                <input id="data-inicio" class="data" type="date" placeholder=""/>
+                                <input id="data-fim" class="data" type="date" placeholder=""/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr id="pesquisas-line3">
+                        <td>
+                            <input class="status-pesquisa" name="status" id="status-apagar" type="radio" value="0" checked/><label for="status-apagar">A PAGAR</label>
+                        </td>
+                        <td>
+                            <input class="status-pesquisa" name="status" id="status-pagos" type="radio" value="1"/><label for="status-pagos">PAGOS</label>
+                        </td>
+                        <td>
+                            <input class="status-pesquisa" name="status"id="status-ambos" type="radio" value="2"/><label for="status-ambos">AMBOS</label>
+                        </td>
+                    </tr>
+                    <tr id="pesquisas-line4">
+                        <td colspan="3">
+                            <input id="botao-pesquisar" type="button" value="PESQUISAR"  onclick="pesquisarPremiacoes()"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="retorno">
+                
+            </div>
+            <div id="pagina">
+                <div id="voltar-pagina" onclick="voltarPagina()"></div>
+                <input type="number" id="num-pagina" value="1" min="1"/>
+                <div id="proxima-pagina" onclick="proximaPagina()"></div>
+            </div>
+
+            <div id="confirmar-pagamento">
+                <div id="confirmar-pagamento-conteudo">
+                    <div id="fechar-confirmar-pagamento" onclick="fecharConfirmarPagamento()"></div>
+                    <div id="mensagem-confirmar-pagamento">
+                        <h4>
+                            
+                        </h4>
+                        <h5>
+
+                        </h5>
+                    </div>
+                    <div id="botoes-confirmar-pagamento">
+                        <input id="botao-confirmar-pagamento-nao" onclick="fecharConfirmarPagamento()" type="button" value="NÃO"/>
+                        <input id="botao-confirmar-pagamento-sim" onclick="confirmarPagamento()" type="button" value="SIM"/>
+                    </div>
+                </div>
+            </div>
+            <div id="cancelar-pagamento">
+                <div id="cancelar-pagamento-conteudo">
+                    <div id="fechar-cancelar-pagamento" onclick="fecharCancelarPagamento()"></div>
+                    <div id="mensagem-cancelar-pagamento">
+                        <h4>
+                            
+                        </h4>
+                        <h5>
+
+                        </h5>
+                    </div>
+                    <div id="botoes-cancelar-pagamento">
+                        <input id="botao-cancelar-pagamento-nao" onclick="fecharCancelarPagamento()" type="button" value="NÃO"/>
+                        <input id="botao-cancelar-pagamento-sim" onclick="cancelarPagamento()" type="button" value="SIM"/>
+                    </div>
+                </div>
+            </div>
+            <div id="mensagem-pesquisa">
+                <div id="mensagem-pesquisa-conteudo">
+                    <div id="fechar-mensagem-pesquisa" onclick="fecharMensagemPesquisa()"></div>
+                    <div id="mensagem">
+                        <h4>
+                            
+                        </h4>
+                        <h5>
+                            
+                        </h5>
+                    </div>
+                    <div id="botoes-mensagem-pesquisa">
+                        <input id="botao-mensagem-ok" onclick="fecharMensagemPesquisa()" type="button" value="OK"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="./_js/ajax.js"></script>
+        <script src="./_js/adm.js"></script>
+        <script src="./_js/premiacoes.js"></script>
+    </body>
+</html>

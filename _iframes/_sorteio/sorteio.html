@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Sorteio</title>
+        <link rel="stylesheet" href="./_css/sorteio.css"/>
+        <audio autoplay loop width="0" height="0">
+            <source src="_music/ravey-game-loop-3.wav"  type="audio/wav"/>
+        </audio>
+    </head>
+    <body>
+        <header>
+            <div class="header-conteudo" id="barra-bonus">
+                <div id="white-box">
+                    <div>
+                        <h3></h3>
+                    </div>
+                    <div>
+                        <h3></h3>
+                    </div>
+                    <div>
+                        <h3></h3>
+                    </div>
+                    <div>
+                        <h3></h3>
+                    </div>
+                    <div>
+                        <h3></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="header-conteudo" id="barra-sorteio">
+                <div>
+                    <h2 id="titulo-sorteio">AGUARDANDO...</h2>
+                </div>
+                <div>
+                    <h2 id="numero-sorteio"></h2>
+                </div>
+            </div>
+            <div class="header-conteudo" id="barra-tempo">
+                <div>
+                    <h2 id="tempo"></h2>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <div id="mensagem">
+                <h6>NOVO<br/>SORTEIO</h6>
+            </div>
+            <div id="esquerda-conteudo">
+                <table>
+                    <tr>
+                        <td id="bola-1">
+                            <div class="esfera">
+                                <div class="centro-esfera">
+                                    <h1>01</h1>
+                                </div>
+                            </div>
+                        </td>
+                        <td id="bola-2">
+                            <div class="esfera">
+                                <div class="centro-esfera">
+                                    <h1>02</h1>
+                                </div>
+                            </div>
+                        </td>
+                        <td id="bola-3">
+                            <div class="esfera">
+                                <div class="centro-esfera">
+                                    <h1>03</h1>
+                                </div>
+                            </div>
+                        </td>
+                        <td id="bola-4">
+                            <div class="esfera">
+                                <div class="centro-esfera">
+                                    <h1>12</h1>
+                                </div>
+                            </div>
+                        </td>
+                        <td id="bola-5">
+                            <div class="esfera">
+                                <div class="centro-esfera">
+                                    <h1>14</h1>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="bola-6">
+                            <div class="esfera">
+                                <div class="centro-esfera">
+                                    <h1>15</h1>
+                                </div>
+                            </div>
+                        </td>
+                        <td id="bola-7">
+                            <div class="esfera">
+                                <div class="centro-esfera">
+                                    <h1>16</h1>
+                                </div>
+                            </div>
+                        </td>
+                        <td id="bola-8">
+                            <div class="esfera">
+                                <div class="centro-esfera">
+                                    <h1>17</h1>
+                                </div>
+                            </div>
+                        </td>
+                        <td id="bola-9">
+                            <div class="esfera">
+                                <div class="centro-esfera">
+                                    <h1>18</h1>
+                                </div>
+                            </div>
+                        </td>
+                        <td id="bola-10">
+                            <div class="esfera">
+                                <div class="centro-esfera">
+                                    <h1>19</h1>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="bola-11">
+                            <div class="esfera">
+                                <div class="centro-esfera">
+                                    <h1>21</h1>
+                                </div>
+                            </div>
+                        </td>
+                        <td id="bola-12">
+                            <div class="esfera">
+                                <div class="centro-esfera">
+                                    <h1>31</h1>
+                                </div>
+                            </div>
+                        </td>
+                        <td id="bola-13">
+                            <div class="esfera">
+                                <div class="centro-esfera">
+                                    <h1>41</h1>
+                                </div>
+                            </div>
+                        </td>
+                        <td id="bola-14">
+                            <div class="esfera">
+                                <div class="centro-esfera">
+                                    <h1>51</h1>
+                                </div>
+                            </div>
+                        </td>
+                        <td id="bola-15">
+                            <div class="esfera">
+                                <div class="centro-esfera">
+                                    <h1>61</h1>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="bola-16">
+                            <div class="esfera">
+                                <div class="centro-esfera">
+                                    <h1>71</h1>
+                                </div>
+                            </div>
+                        </td>
+                        <td id="bola-17">
+                            <div class="esfera">
+                                <div class="centro-esfera">
+                                    <h1>81</h1>
+                                </div>
+                            </div>
+                        </td>
+                        <td id="bola-18">
+                            <div class="esfera">
+                                <div class="centro-esfera">
+                                    <h1>91</h1>
+                                </div>
+                            </div>
+                        </td>
+                        <td id="bola-19">
+                            <div class="esfera">
+                                <div class="centro-esfera">
+                                    <h1>12</h1>
+                                </div>
+                            </div>
+                        </td>
+                        <td id="bola-20">
+                            <div class="esfera">
+                                <div class="centro-esfera">
+                                    <h1>13</h1>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="direita-conteudo">
+                <div id="valores">
+                    <h4><b>1 BOLA:</b><br/>
+                        
+                        1: R$2,70x<br/>
+
+                        <b>2 BOLAS:</b><br/>
+                        
+                        1: R$1,50x<br/>
+                        2: R$6,00x<br/>
+                    </h4>
+
+                    <h4><b>3 BOLAS:</b><br/>
+                        
+                        2: R$5,20x<br/>
+                        3: R$15,00x<br/>
+
+                        <b>4 BOLAS:</b><br/>
+                        
+                        2: R$2,80x<br/>
+                        3: R$6,00x<br/>
+                        4: R$25,00x<br/>
+                    </h4>
+
+                    <h4><b>5 BOLAS:</b><br/>
+                        
+                        3: R$7,50x<br/>
+                        4: R$20,00x<br/>
+                        5: R$100,00x<br/>
+
+                        <b>6 BOLAS:</b><br/>
+                        3: R$4,30x<br/>
+                        4: R$8,00x<br/>
+                        5: R$35,00x<br/>
+                        6: R$200,00x<br/>
+                    </h4>
+
+                    <h4><b>7 BOLAS:</b><br/>
+                        
+                        3: R$3,00x<br/>
+                        4: R$4,00x<br/>
+                        5: R$15,00x<br/>
+                        6: R$50,00x<br/>
+                        7: R$1.000,00x<br/>
+                    </h4>
+
+                    <h4><b>8 BOLAS:</b><br/>
+                        
+                        4: R$7,00x<br/>
+                        5: R$10,00x<br/>
+                        6: R$30,00x<br/>
+                        7: R$500,00x<br/>
+                        8: R$2.000,00x<br/>
+                    </h4>
+
+                    <h4><b>9 BOLAS:</b><br/>
+                        
+                        4: R$4,70x<br/>
+                        5: R$6,00x<br/>
+                        6: R$20,00x<br/>
+                        7: R$100,00x<br/>
+                        8: R$800,00x<br/>
+                        9: R$4.000,00x<br/>
+                    </h4>
+
+                    <h4><b>10 BOLAS:</b><br/>
+                        
+                        4: R$3,20x<br/>
+                        5: R$5,00x<br/>
+                        6: R$10,00x<br/>
+                        7: R$30,00x<br/>
+                        8: R$300,00x<br/>
+                        9: R$1.000,00x<br/>
+                        10: R$5.000,00x<br/>
+                    </h4>
+
+                    <h4>
+                        <b>BONUS:</b><br/>
+
+                        12<green>XXX</green>: R$100,00<br/>
+                        1<green>XXXX</green>: R$350,00<br/>
+                        <green>XXXXX</green>: R$1000,00<br/>
+                    </h4>
+                </div>
+                <div id="bola-sorteada">
+                    <div class="esfera">
+                        <div class="centro-esfera">
+                            <h1>51</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <h5 id="premiacao">  
+            </h5>
+            <div id="online"></div>
+        </footer>
+	    <script src="./_js/ajax.js"></script>
+        <script src="./_js/sorteio.js"></script>
+    </body>
+</html>

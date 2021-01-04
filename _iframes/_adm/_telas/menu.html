@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Menu</title>
+        <link rel="stylesheet" href="./_css/adm.css"/>
+    </head>
+    <body>
+        <div id="carregando">
+            <img id="carregando-gif" src="./_img/loading.gif"/>
+        </div>
+        <section class="menu">
+            <div class="botao-config" onclick="mudarPagina('configuracoes')">
+            </div>
+            <div class="botao-sair" onclick="finalizaSessao()">
+            </div>
+            <div id="botoes">
+                <input type="button" class="botao" onclick="mudarPagina('apostar')" value="APOSTAR"/>
+                <input type="button" class="botao" onclick="mudarPagina('sorteios')" value="SORTEIOS"/>
+                <input type="button" class="botao" onclick="mudarPagina('premiacoes')" value="PREMIAÇÕES"/>
+                <input type="button" class="botao" onclick="mudarPagina('caixa')" value="CAIXA"/>
+            </div>
+        </section>
+        <script src="./_js/ajax.js"></script>
+        <script src="./_js/adm.js"></script>
+    </body>
+</html>

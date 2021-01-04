@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Configurações</title>
+        <link rel="stylesheet" href="./_css/adm.css"/>
+        <link rel="stylesheet" href="./_css/geral_font.css.php"/>
+        <link rel="stylesheet" href="./_css/configuracoes.css"/>
+    </head>
+    <body>
+        <div id="carregando">
+            <img id="carregando-gif" src="./_img/loading.gif"/>
+        </div>
+        <section class="menu">
+            <div class="botao-voltar" onclick="voltar()"></div>
+            <div class="botao-sair" onclick="finalizaSessao()"></div>
+
+            <div id="abas">
+                <div class="aba" id="aba-gerais" onclick="telaGerais()">GERAIS</div>
+                <div class="aba" id="aba-usuario" onclick="telaUsuario()">USUÁRIO</div>
+            </div>
+            <table id="gerais">
+                <tbody>
+                    <tr>
+                        <td colspan="2">
+                            <h2>RAZÃO</h2>
+                            <input id="razao" type="range" onchange="alterarRazao()" onmousemove="alterarRazao()"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h2>SELECIONADA: </h2>
+                            <input id="razao-selecionada" type="number" disabled/>
+                        </td>
+                        <td>
+                            <h2>ATUAL: </h2>
+                            <input id="razao-atual" type="number" disabled/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input id="botao-salvar-gerais" type="button" value="SALVAR"  onclick="salvarConfiguracoesGerais()"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table id="usuario">
+                <tbody>
+                    <tr>
+                        <td colspan="2">
+                            <h2>FONTE DO BILHETE</h2>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h2>APLICATIVO: </h2>
+                            <input id="bilhete_app_font" type="number"/>
+                        </td>
+                        <td>
+                            <h2>IMPRESSÃO: </h2>
+                            <input id="bilhete_print_font" type="number"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <h2>FONTE DO EXTRATO</h2>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h2>APLICATIVO: </h2>
+                            <input id="extrato_app_font" type="number"/>
+                        </td>
+                        <td>
+                            <h2>IMPRESSÃO: </h2>
+                            <input id="extrato_print_font" type="number"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <h2>FONTE DO SISTEMA</h2>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h2>TÍTULO: </h2>
+                            <input id="h4_font" type="number"/>
+                        </td>
+                        <td>
+                            <h2>MENSAGEM: </h2>
+                            <input id="h5_font" type="number"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input id="botao-salvar-usuario" type="button" value="SALVAR"  onclick="salvarConfiguracoesUsuarios()"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="mensagem-configuracao">
+                <div id="mensagem-configuracao-conteudo">
+                    <div id="fechar-mensagem-configuracao" onclick="fecharMensagemConfiguracao()"></div>
+                    <div id="mensagem">
+                        <h4>
+                            
+                        </h4>
+                        <h5>
+                            
+                        </h5>
+                    </div>
+                    <div id="botoes-mensagem-configuracao">
+                        <input id="botao-mensagem-ok" onclick="fecharMensagemConfiguracao()" type="button" value="OK"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="./_js/ajax.js"></script>
+        <script src="./_js/adm.js"></script>
+        <script src="./_js/configuracoes.js"></script>
+    </body>
+</html>
