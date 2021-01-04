@@ -1,7 +1,7 @@
 <?php
     ini_set('xdebug.max_nesting_level', 1000);
 
-    include '/var/www/html/_clients/_37100020375051/_bd/conexao_bd.php';
+    include '/var/www/html/_bd/conexao_bd.php';
     /*include '../../../_bd/conexao_bd.php';*/
 
     $sorteio = numeroSorteio();
