@@ -114,7 +114,7 @@
 
     function retornaSaldo () {
         $conn = getConnection();
-        $sql = "SELECT COALESCE(SUM(CASE cm.id_caixa WHEN 1 THEN (CASE tm.direcao WHEN 0 THEN cm.valor ELSE cm.valor*-1 END) END), 0) AS saldo_principal, COALESCE(SUM(CASE cm.id_caixa WHEN 2 THEN (CASE tm.direcao WHEN 0 THEN cm.valor ELSE cm.valor*-1 END) END), 0)-(SELECT COALESCE(SUM(valor_total), 0) FROM premiacoes WHERE paga = 0) AS saldo_premio FROM `caixas_movimentacoes` AS cm LEFT JOIN tipos_movimentacoes AS tm ON cm.id_tipo_movimentacao = tm.id LEFT JOIN caixas AS c ON cm.id_caixa = c.id";
+        $sql = "SELECT COALESCE(SUM(CASE cm.id_caixa WHEN 1 THEN (CASE tm.direcao WHEN 0 THEN cm.valor ELSE cm.valor*-1 END) END), 0) AS saldo_principal, COALESCE(SUM(CASE cm.id_caixa WHEN 2 THEN (CASE tm.direcao WHEN 0 THEN cm.valor ELSE cm.valor*-1 END) END), 0)-(SELECT COALESCE(SUM(valor), 0) FROM premiacoes_pagamentos WHERE paga = 0) AS saldo_premio FROM `caixas_movimentacoes` AS cm LEFT JOIN tipos_movimentacoes AS tm ON cm.id_tipo_movimentacao = tm.id LEFT JOIN caixas AS c ON cm.id_caixa = c.id";
         $stmt = $conn-> prepare($sql);
         
         if ($stmt-> execute()) {
