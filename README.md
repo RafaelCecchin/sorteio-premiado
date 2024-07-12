@@ -45,7 +45,7 @@ O sistema é dividido em duas partes, sendo que uma delas vai instalada em uma A
 		>> CREATE DATABASE sorteios CHARACTER SET utf8 COLLATE utf8_general_ci;
 		>> SET time_zone = 'America/Sao Paulo'; SET time_zone = "+03:00"; SET @@session.time_zone = "+03:00";
 		>> exit
-		>> mysql -u root -p sorteios < /var/www/html/_dump_bd/sorteios.sql
+		>> mysql -u root -p sorteios < /var/www/html/_db/_dump_bd/sorteios.sql
 		[PASSWORD]
 		>> sudo nano /var/www/html/_bd/conexao_bd.php
 		Informe no arquivo as credenciais da base de dados e tecle CTRL + O e CTRL + X para salvar e sair.

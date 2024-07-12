@@ -1,9 +1,14 @@
 <?php
     function getConnection() {
-        $dsn = 'mysql:host=localhost;dbname=sorteios;charset=utf8';
-        $user = 'root';
-        $pass = '';
-    
+        
+        $host = 'db';
+        $dbname = 'sorteios';
+        $chatset = 'utf8';
+        $user = 'sistema';
+        $pass = '1234';
+
+        $dsn = "mysql:host=$host;dbname=$dbname;charset=$chatset";
+
         try {
             $pdo = new PDO($dsn, $user, $pass);
             return $pdo;

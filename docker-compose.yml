@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  
+  php-apache:
+    build:
+      context: .
+      dockerfile: dockerfile.php-apache
+    container_name: php-apache
+    volumes:
+      - ./:/var/www/html
+    networks:
+      - sorteio-net
+    ports:
+      - "80:80"
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    container_name: db
+    volumes:
+      - ./_bd/_data:/var/lib/mysql
+      - ./_bd/_dump_bd:/docker-entrypoint-initdb.d
+    networks:
+      - sorteio-net
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 'tPDL9mdf7A2'
+      MYSQL_DATABASE: 'sorteios'
+      MYSQL_USER: 'sistema'
+      MYSQL_PASSWORD: '1234'
+
+networks:
+  sorteio-net:
+    driver: bridge
