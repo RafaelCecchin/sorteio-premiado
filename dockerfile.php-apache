@@ -1,3 +1,11 @@
 FROM php:7.1-apache
-
+    
 RUN docker-php-ext-install pdo pdo_mysql
+
+RUN apt-get update && \
+    apt-get install -y cron
+RUN echo "*/5 * * * * /usr/local/bin/php -f /var/www/html/_iframes/_sorteio/_php/sorteio.php" > /etc/cron.d/sorteio-cron
+RUN chmod 0644 /etc/cron.d/sorteio-cron
+RUN crontab /etc/cron.d/sorteio-cron
+
+ENTRYPOINT ["sh", "-c", "cron && apache2-foreground"]
