@@ -2,6 +2,8 @@
 
 Um Web App focado em Android, criado para proporcionar lucro e entretenimento para bares! Desenvolvi esse projeto em 2017 e recentemente apliquei uma atualização para facilitar sua implementação com Docker.
 
+[![Vídeo - Youtube](https://github.com/RafaelCecchin/sorteio-premiado/blob/master/_img/Video.png)](https://www.youtube.com/watch?v=MIQ7oggkowg)
+
 #### 1. Apresentação do sistema
 #### 2. Como instalar
 
