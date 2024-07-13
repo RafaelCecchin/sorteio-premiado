@@ -15,6 +15,13 @@ services:
       - "80:80"
     depends_on:
       - db
+    environment:
+      MYSQL_HOST: db
+      MYSQL_CHARSET: utf8
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
 
   db:
     image: mysql:5.7
@@ -26,10 +33,10 @@ services:
       - sorteio-net
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: 'tPDL9mdf7A2'
-      MYSQL_DATABASE: 'sorteios'
-      MYSQL_USER: 'sistema'
-      MYSQL_PASSWORD: '1234'
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
 
 networks:
   sorteio-net:

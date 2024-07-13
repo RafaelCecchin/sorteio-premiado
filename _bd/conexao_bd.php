@@ -1,11 +1,11 @@
 <?php
     function getConnection() {
         
-        $host = 'db';
-        $dbname = 'sorteios';
-        $chatset = 'utf8';
-        $user = 'sistema';
-        $pass = '1234';
+        $host = $_ENV['MYSQL_HOST'];
+        $dbname = $_ENV['MYSQL_DATABASE'];
+        $chatset = $_ENV['MYSQL_CHARSET'];
+        $user = $_ENV['MYSQL_USER'];
+        $pass = $_ENV['MYSQL_PASSWORD'];
 
         $dsn = "mysql:host=$host;dbname=$dbname;charset=$chatset";
 
