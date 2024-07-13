@@ -29,6 +29,17 @@ O sistema é dividido em duas partes, sendo que uma delas vai instalada em uma A
 
 ## 2. Como instalar?
 
+É possível instalar o projeto através do Docker Compose ou da instalação normal em um servidor Linux.
+
+Independente do método de instalação escolhido, crie um arquivo ".env" na raiz do projeto e informe os dados abaixo.
+
+```bash
+MYSQL_ROOT_PASSWORD=
+MYSQL_DATABASE=
+MYSQL_USER=
+MYSQL_PASSWORD=
+```
+
 ### 2.1. Docker
 
 ```bash
