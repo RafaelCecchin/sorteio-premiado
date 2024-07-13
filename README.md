@@ -1,5 +1,6 @@
-# sorteio-premiado
-Web App com foco em Android, que tem por objetivo gerar lucro e entretenimento para bares.
+# 🍻 Sorteio Premiado 🎉
+
+Um Web App focado em Android, criado para proporcionar lucro e entretenimento para bares! Desenvolvi esse projeto em 2017 e recentemente apliquei uma atualização para facilitar sua implementação com Docker.
 
 #### 1. Apresentação do sistema
 #### 2. Como instalar
@@ -26,11 +27,17 @@ O sistema é dividido em duas partes, sendo que uma delas vai instalada em uma A
 
 ## 2. Como instalar?
 
-### 2.1. Requisitos
+### 2.1. Docker
 
-	Servidor WEB VPS linux (que permita utilizar o crontab). É necessário que o apache, php e mysql estejam instalados e configurados corretamente.
+```bash
+docker compose up --build
+```
 
-### 2.2. Instalação
+### 2.2. Servidor linux
+
+Servidor WEB VPS linux (que permita utilizar o crontab). É necessário que o apache, php e mysql estejam instalados e configurados corretamente.
+
+#### 2.2.1 Instalação
 
 	Download dos arquivos:
 		>> cd /var/www/html
@@ -56,7 +63,7 @@ O sistema é dividido em duas partes, sendo que uma delas vai instalada em uma A
 	Alterar a permissão do arquivo de sorteios:
 		>> chmod 700 /var/www/html/_iframes/_sorteio/_php/sorteio.php
 		
-### 2.3. Geração dos APK's
+#### 2.2.2 Geração dos APK's
 
 	Baixe e instale o programa WEBSITE 2 APK BUILDER PRO (https://websitetoapk.com/).
 	Geração do APK de apostas (celular):
