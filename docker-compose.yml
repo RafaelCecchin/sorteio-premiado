@@ -6,6 +6,7 @@ services:
     build:
       context: .
       dockerfile: dockerfile.php-apache
+    image: php-apache
     container_name: php-apache
     volumes:
       - ./:/var/www/html
