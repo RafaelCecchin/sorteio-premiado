@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sorteio
+  labels:
+    app: sorteio
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sorteio
+  template:
+    metadata:
+      labels:
+        app: sorteio
+    spec:
+      containers:
+      - name: sorteio
+        image: rafaelcecchin/sorteio-php-apache:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: MYSQL_HOST
+          value: "db"
+        - name: MYSQL_CHARSET
+          value: "utf8"
