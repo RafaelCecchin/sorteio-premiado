@@ -50,8 +50,6 @@ docker compose up --build
 
 Servidor WEB VPS linux (que permita utilizar o crontab). É necessário que o apache, php e mysql estejam instalados e configurados corretamente.
 
-#### 2.2.1 Instalação
-
 	Download dos arquivos:
 		>> cd /var/www/html
 		>> wget https://github.com/RafaelCecchin/sorteio-premiado/archive/master.zip
@@ -74,9 +72,9 @@ Servidor WEB VPS linux (que permita utilizar o crontab). É necessário que o ap
 		Informe no arquivo o seguinte dado (sem aspas): "*/5 * * * * php -f /var/www/html/_iframes/_sorteio/_php/sorteio.php"
 		Tecle :wq para salvar e sair
 	Alterar a permissão do arquivo de sorteios:
-		>> chmod 700 /var/www/html/_iframes/_sorteio/_php/sorteio.php
+		>> chmod 700 /var/www/html/_iframes/_sorteio/_php/sorteio.php	
 		
-#### 2.2.2 Geração dos APK's
+## 3. Geração dos APKs
 
 	Baixe e instale o programa WEBSITE 2 APK BUILDER PRO (https://websitetoapk.com/).
 	Geração do APK de apostas (celular):
@@ -109,7 +107,7 @@ Servidor WEB VPS linux (que permita utilizar o crontab). É necessário que o ap
 	Clique em "FINISH!" quando a seguinte mensagem aparecer:
 ![Web2apk Builder 6](https://github.com/RafaelCecchin/sorteio-premiado/blob/master/_img/Web2apk%206.png)
 	
-## 3. Acesso ao painel
+## 4. Acesso ao painel
 
 Usuário: root@dominio.com
 Senha: 1234
